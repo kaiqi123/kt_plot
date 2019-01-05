@@ -32,7 +32,7 @@ def select_subset_of_every_category(openFile, writeFile):
     remain_lines = []
     for i in range(102):
         content_list = content_dict[str(i)]
-        remain_size = int(len(content_list) * 0.8)
+        remain_size = int(len(content_list) * 1.0)
         for j in range(remain_size):
             remain_lines.append(content_list[j])
 
@@ -91,13 +91,23 @@ change_path("caltech101/caltech101-train-old.txt", "caltech101/caltech101-train.
 change_path("caltech101/caltech101-test-old.txt", "caltech101/caltech101-test.txt")
 change_path("caltech101/caltech101-validation-old.txt", "caltech101/caltech101-validation.txt")
 change_path("caltech101/dataset-old.txt", "caltech101/dataset.txt")
-"""
 
 
 select_subset_of_every_category("caltech101/dataset.txt", "caltech101/dataset_remain.txt")
 shuttle("caltech101/dataset_remain.txt", "caltech101/dataset_remain_shuttle.txt")
 create_train_and_test_dataset("caltech101/dataset_remain_shuttle.txt", "caltech101/caltech101-subset-train.txt", "caltech101/caltech101-subset-test.txt")
 
-#shuttle("caltech101/dataset_delete_categories.txt", "caltech101/dataset_delete_categories_shuttle.txt")
-#create_train_and_test_dataset("caltech101/dataset_delete_categories_shuttle.txt", "caltech101/caltech101-delete-categories-train.txt", "caltech101/caltech101-delete-categories-test.txt")
-# 83 categories
+shuttle("caltech101/dataset_delete_categories.txt", "caltech101/dataset_delete_categories_shuttle.txt")
+create_train_and_test_dataset("caltech101/dataset_delete_categories_shuttle.txt", "caltech101/caltech101-delete-categories-train.txt", "caltech101/caltech101-delete-categories-test.txt")
+83 categories
+"""
+
+#select_subset_of_every_category("new_caltech101/caltech101-train.txt", "new_caltech101/caltech101-train-remain.txt")
+#shuttle("new_caltech101/caltech101-train-remain.txt", "new_caltech101/caltech101-subset-train.txt")
+#create_train_and_test_dataset("new_caltech101/dataset_remain_shuttle.txt", "new_caltech101/caltech101-subset-train.txt", "new_caltech101/caltech101-subset-test.txt")
+
+#select_subset_of_every_category("new_caltech101/caltech101-train.txt", "new_caltech101/caltech101-delete-categories-train.txt")
+#select_subset_of_every_category("new_caltech101/caltech101-test.txt", "new_caltech101/caltech101-delete-categories-test-73.txt")
+
+#shuttle("new_caltech101/caltech101-delete-categories-train.txt", "new_caltech101/caltech101-delete-categories-train.txt")
+shuttle("new_caltech101/caltech101-delete-categories-test-29.txt", "new_caltech101/caltech101-delete-categories-test-29.txt")
