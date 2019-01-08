@@ -6,7 +6,8 @@ def change_path(oldFile, newFile):
     lines = f.readlines()
     lines_new = []
     for line in lines:
-        line1 = line.replace("/home/users/saman/VGG19-TF/", "./")
+        #line1 = line.replace("/home/users/saman/VGG19-TF/", "./")
+        line1 = line.replace("/home/users/saman/CNTK/Examples/Image/DataSets/CIFAR-10/", "./cifar10/")
         lines_new.append(line1)
         # print(line1)
     print(len(lines))
@@ -86,6 +87,26 @@ def create_train_and_test_dataset(openFile, trainFile, testFile):
     f1.close()
     f2.close()
 
+import os
+import sys
+
+def change_picture_name():
+    file_writer = open("./cifar10/dataset.txt", "w")
+    for subdir, dirs, files in os.walk("./cifar10/cifar10_images/test"):
+        print(subdir, dirs, files)
+        for filename in files:
+            num, name = filename.split("_")
+            labelname, png = str(name).split(".")
+            print(num)
+            print(labelname)
+            print(png)
+            if labelname == "truck":
+                writeName = str(9) + "," + str(subdir) + "/" + str(filename) + "\n"
+                print(writeName)
+                #file_writer.write()
+            print("\n")
+
+
 """
 change_path("caltech101/caltech101-train-old.txt", "caltech101/caltech101-train.txt")
 change_path("caltech101/caltech101-test-old.txt", "caltech101/caltech101-test.txt")
@@ -110,4 +131,8 @@ create_train_and_test_dataset("caltech101/dataset_delete_categories_shuttle.txt"
 #select_subset_of_every_category("new_caltech101/caltech101-test.txt", "new_caltech101/caltech101-delete-categories-test-73.txt")
 
 #shuttle("new_caltech101/caltech101-delete-categories-train.txt", "new_caltech101/caltech101-delete-categories-train.txt")
-shuttle("new_caltech101/caltech101-delete-categories-test-29.txt", "new_caltech101/caltech101-delete-categories-test-29.txt")
+#shuttle("new_caltech101/caltech101-delete-categories-test-29.txt", "new_caltech101/caltech101-delete-categories-test-29.txt")
+
+#change_path("cifar10/cifar10-train-old.txt", "cifar10/cifar10-train.txt")
+#change_path("cifar10/cifar10-test-old.txt", "cifar10/cifar10-test.txt")
+change_picture_name()

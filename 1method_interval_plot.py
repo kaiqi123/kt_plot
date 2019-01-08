@@ -10,7 +10,7 @@ plt.plot(interval_1_add_initialization, label="connect every time(add initializa
 # connect every time, not initialization
 interval_1_not_initialization = save_data_to_list(read_data("method1_interval/interval_1_not_initialization"))
 print("connect every time(not initialization): " + str(caculate_convergence_time(interval_1_not_initialization)))
-plt.plot(interval_1_not_initialization, label="connect every time(not initialization)")
+#plt.plot(interval_1_not_initialization, label="connect every time(not initialization)")
 
 # interval 10, add initialization
 interval_10_add_initialization = save_data_to_list(read_data("method1_interval/interval_10_add_initialization"))
@@ -47,7 +47,12 @@ independent_student_not_initialization = save_data_to_list(read_data("method1_in
 print("independent_student_not_initialization: " + str(caculate_convergence_time(independent_student_not_initialization)))
 #plt.plot(independent_student_not_initialization, label="independent_student_not_initialization")
 
+# dependent_student, add initialization
+connect_first_234iterations_add_initialization = save_data_to_list(read_data("method1_interval/connect_first_234iterations_add_initialization"))
+print("connect_first_234iterations_add_initialization: " + str(caculate_convergence_time(connect_first_234iterations_add_initialization)))
+plt.plot(connect_first_234iterations_add_initialization, label="connect_first_234iterations_add_initialization")
+
 plt.xlabel("epoch")
 plt.ylabel("accuracy")
-plt.legend()
+plt.legend().draggable()
 plt.show()
