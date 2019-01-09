@@ -90,9 +90,9 @@ def create_train_and_test_dataset(openFile, trainFile, testFile):
 import os
 import sys
 
-def change_picture_name():
-    file_writer = open("./cifar10/dataset.txt", "w")
-    for subdir, dirs, files in os.walk("./cifar10/cifar10_images/test"):
+def create_cifar10_txtfile(openFile, writeFile):
+    file_writer = open(writeFile, "w")
+    for subdir, dirs, files in os.walk(openFile):
         print(subdir, dirs, files)
         for filename in files:
             num, name = filename.split("_")
@@ -100,10 +100,30 @@ def change_picture_name():
             print(num)
             print(labelname)
             print(png)
-            if labelname == "truck":
+
+            if labelname == "automobile":
+                writeName = str(1) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "bird":
+                writeName = str(2) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "cat":
+                writeName = str(3) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "deer":
+                writeName = str(4) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "dog":
+                writeName = str(5) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "frog":
+                writeName = str(6) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "horse":
+                writeName = str(7) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "ship":
+                writeName = str(8) + "," + str(subdir) + "/" + str(filename) + "\n"
+            elif labelname == "truck":
                 writeName = str(9) + "," + str(subdir) + "/" + str(filename) + "\n"
-                print(writeName)
-                #file_writer.write()
+            else:
+                writeName = str(0) + "," + str(subdir) + "/" + str(filename) + "\n"
+
+            #print(writeName)
+            file_writer.write(writeName)
             print("\n")
 
 
@@ -133,6 +153,5 @@ create_train_and_test_dataset("caltech101/dataset_delete_categories_shuttle.txt"
 #shuttle("new_caltech101/caltech101-delete-categories-train.txt", "new_caltech101/caltech101-delete-categories-train.txt")
 #shuttle("new_caltech101/caltech101-delete-categories-test-29.txt", "new_caltech101/caltech101-delete-categories-test-29.txt")
 
-#change_path("cifar10/cifar10-train-old.txt", "cifar10/cifar10-train.txt")
-#change_path("cifar10/cifar10-test-old.txt", "cifar10/cifar10-test.txt")
-change_picture_name()
+create_cifar10_txtfile("./cifar10_images/test", "./cifar10_images/cifar10-test.txt")
+create_cifar10_txtfile("./cifar10_images/train", "./cifar10_images/cifar10-train.txt")
