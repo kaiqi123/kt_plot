@@ -12,6 +12,7 @@ interval_1_not_initialization = save_data_to_list(read_data("method1_interval/in
 #print("connect every time(not initialization): " + str(caculate_convergence_time(interval_1_not_initialization)))
 #plt.plot(interval_1_not_initialization, label="connect every time(not initialization)")
 
+
 # interval 10, add initialization
 interval_10_add_initialization = save_data_to_list(read_data("method1_interval/interval_10_add_initialization"))
 print("interval 10 (add initialization): " + str(caculate_convergence_time(interval_10_add_initialization)))
@@ -44,8 +45,8 @@ independent_student_add_initialization = save_data_to_list(read_data("method1_in
 
 # independent_student, not initialization
 independent_student_not_initialization = save_data_to_list(read_data("method1_interval/independent_student_not_initialization"))
-#print("independent_student_not_initialization: " + str(caculate_convergence_time(independent_student_not_initialization)))
-#plt.plot(independent_student_not_initialization, label="independent_student_not_initialization")
+print("independent_student_not_initialization: " + str(caculate_convergence_time(independent_student_not_initialization)))
+plt.plot(independent_student_not_initialization, label="independent_student_not_initialization")
 
 # dependent_student, add initialization, connect_first_234iterations
 connect_first_234iterations_add_initialization = save_data_to_list(read_data("method1_interval/connect_first_234iterations_add_initialization"))
