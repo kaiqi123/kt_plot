@@ -36,7 +36,7 @@ independent_student_conv5_fc2 = save_data_to_list(read_data(path+"independent_st
 print("independent_student_conv5_fc2: " + str(caculate_convergence_time(independent_student_conv5_fc2)))
 plt.plot(independent_student_conv5_fc2, label="independent_student_conv5_fc2")
 
-plt.title("Cifar10: Independent Student")
+plt.title("Cifar10: Independent Student, Learning Rate 0.0001")
 plt.xlabel("epoch")
 plt.ylabel("accuracy")
 plt.legend().draggable()

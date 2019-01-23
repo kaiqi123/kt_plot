@@ -22,7 +22,7 @@ plt.plot(conv4_fc1, label="independent_student(4 conv + 1 fc)")
 # independent_student, not initialization, 3 conv + 1 fc
 conv3_fc1 = save_data_to_list(read_data(path+"conv3_fc1"))
 print("independent_student(3 conv + 1 fc): " + str(caculate_convergence_time(conv3_fc1)))
-plt.plot(conv3_fc1, label="independent_student(3 conv + 1 fc)")
+#plt.plot(conv3_fc1, label="independent_student(3 conv + 1 fc)")
 
 # independent_student, not initialization, 2 conv + 1 fc
 conv2_fc1 = save_data_to_list(read_data(path+"conv2_fc1"))
@@ -36,7 +36,7 @@ print("independent_student(1 conv + 1 fc): " + str(caculate_convergence_time(con
 
 # independent_student, not initialization, 1 fc
 fc1 = save_data_to_list(read_data(path+"1fc"))
-#print("independent_student(2): " + str(caculate_convergence_time(fc1)))
+print("independent_student(1 fc: " + str(caculate_convergence_time(fc1)))
 #plt.plot(fc1, label="independent_student(1 fc)")
 
 # dependent_student, connect every time, add initialization, 5 conv + 2 fc
@@ -49,13 +49,14 @@ path = "delete_student_layers/DependentStudent/"
 # dependent_student, add initialization, 3 conv + 1 fc
 dependent_student_conv3_fc1 = save_data_to_list(read_data(path+"conv3_fc1"))
 print("dependent_student(3 conv + 1 fc): " + str(caculate_convergence_time(dependent_student_conv3_fc1)))
-plt.plot(dependent_student_conv3_fc1, label="dependent_student(3 conv + 1 fc)")
+#plt.plot(dependent_student_conv3_fc1, label="dependent_student(3 conv + 1 fc)")
 
 # dependent_student, add initialization, 4 conv + 1 fc
 dependent_student_conv4_fc1 = save_data_to_list(read_data(path+"conv4_fc1"))
 print("dependent_student(4 conv + 1 fc): " + str(caculate_convergence_time(dependent_student_conv4_fc1)))
 plt.plot(dependent_student_conv4_fc1, label="dependent_student(4 conv + 1 fc)")
 
+plt.title("Caltech101: Independent Student, Learning Rate 0.0001")
 plt.xlabel("epoch")
 plt.ylabel("accuracy")
 plt.legend().draggable()
