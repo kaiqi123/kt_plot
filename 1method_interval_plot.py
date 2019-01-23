@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 from readData import *
 
+# teacher
+teacher = save_data_to_list(read_data("teacher"))
+print("teacher: " + str(caculate_convergence_time(teacher)))
+plt.plot(teacher, label="teacher")
+
 # method 1
 # connect every time, add initialization
 interval_1_add_initialization = save_data_to_list(read_data("method1_interval/interval_1_add_initialization"))
@@ -12,11 +17,10 @@ interval_1_not_initialization = save_data_to_list(read_data("method1_interval/in
 #print("connect every time(not initialization): " + str(caculate_convergence_time(interval_1_not_initialization)))
 #plt.plot(interval_1_not_initialization, label="connect every time(not initialization)")
 
-
 # interval 10, add initialization
 interval_10_add_initialization = save_data_to_list(read_data("method1_interval/interval_10_add_initialization"))
 print("interval 10 (add initialization): " + str(caculate_convergence_time(interval_10_add_initialization)))
-plt.plot(interval_10_add_initialization, label="interval: 10 (add initialization)")
+#plt.plot(interval_10_add_initialization, label="interval: 10 (add initialization)")
 
 # interval 10, not initialization
 interval_10_not_initialization = save_data_to_list(read_data("method1_interval/interval_10_not_initialization"))
