@@ -11,6 +11,11 @@ plt.plot(teacher, label="teacher")
 #independent_student,0.001
 path="cifar10_results/indepentStudent_lerning_rate_0.001/"
 
+#independent_student_conv5_fc2
+independent_student_conv5_fc2 = save_data_to_list(read_data(path+"independent_student_conv5_fc2_0.001"))
+print("independent_student_conv5_fc2: " + str(caculate_convergence_time(independent_student_conv5_fc2)))
+plt.plot(independent_student_conv5_fc2, label="independent_student_conv5_fc2")
+
 #independent_student_conv4_fc1
 independent_student_conv4_fc1_new = save_data_to_list(read_data(path+"independent_student_conv4_fc1_0.001"))
 print("independent_student_conv4_fc1_new: " + str(caculate_convergence_time(independent_student_conv4_fc1_new)))
