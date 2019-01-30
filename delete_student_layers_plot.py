@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from readData import *
 
-#caltech101
+#caltech101,student 0.0001
 
 # teacher
 teacher = save_data_to_list(read_data("teacher"))

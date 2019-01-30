@@ -24,31 +24,41 @@ print("dependent_student_conv2_fc1_softmax: " + str(caculate_convergence_time(de
 #dependent_student_conv3_fc1
 dependent_student_conv3_fc1 = save_data_to_list(read_data(path+"conv3_fc1"))
 print("dependent_student_conv3_fc1: " + str(caculate_convergence_time(dependent_student_conv3_fc1)))
-plt.plot(dependent_student_conv3_fc1, label="dependent_student_conv3_fc1")
+#plt.plot(dependent_student_conv3_fc1, label="dependent_student_conv3_fc1")
 
 #dependent_student_conv3_fc1, add softmax
 dependent_student_conv3_fc1_softmax = save_data_to_list(read_data(path+"conv3_fc1_softmax"))
 print("dependent_student_conv3_fc1_softmax: " + str(caculate_convergence_time(dependent_student_conv3_fc1_softmax)))
-plt.plot(dependent_student_conv3_fc1_softmax, label="dependent_student_conv3_fc1_softmax")
+#plt.plot(dependent_student_conv3_fc1_softmax, label="dependent_student_conv3_fc1_softmax")
 
 #dependent_student_conv4_fc1
 dependent_student_conv4_fc1 = save_data_to_list(read_data(path+"conv4_fc1"))
 print("dependent_student_conv4_fc1: " + str(caculate_convergence_time(dependent_student_conv4_fc1)))
-#plt.plot(dependent_student_conv4_fc1, label="dependent_student_conv4_fc1")
+plt.plot(dependent_student_conv4_fc1, label="dependent_student_conv4_fc1")
+
+#dependent_student_conv4_fc1, add softmax
+dependent_student_conv4_fc1_softmax = save_data_to_list(read_data(path+"conv4_fc1_softmax"))
+print("dependent_student_conv4_fc1_softmax: " + str(caculate_convergence_time(dependent_student_conv4_fc1_softmax)))
+plt.plot(dependent_student_conv4_fc1_softmax, label="dependent_student_conv4_fc1_softmax")
 
 #dependent_student_conv4_fc1, new method
 dependent_student_conv4_fc1_new = save_data_to_list(read_data(path+"conv4_fc1_newMethod"))
 print("dependent_student_conv4_fc1_new: " + str(caculate_convergence_time(dependent_student_conv4_fc1_new)))
-#plt.plot(dependent_student_conv4_fc1_new, label="dependent_student_conv4_fc1(new method)")
+plt.plot(dependent_student_conv4_fc1_new, label="dependent_student_conv4_fc1(new method)")
 
 #dependent_student_conv5_fc2
 dependent_student_conv5_fc2 = save_data_to_list(read_data(path+"conv5_fc2"))
 print("dependent_student_conv5_fc2: " + str(caculate_convergence_time(dependent_student_conv5_fc2)))
 #plt.plot(dependent_student_conv5_fc2, label="dependent_student_conv5_fc2")
 
+#dependent_student_conv5_fc2, add softmax
+dependent_student_conv5_fc2_softmax = save_data_to_list(read_data(path+"conv5_fc2_softmax"))
+print("dependent_student_conv5_fc2_softmax: " + str(caculate_convergence_time(dependent_student_conv5_fc2_softmax)))
+#plt.plot(dependent_student_conv5_fc2_softmax, label="dependent_student_conv5_fc2_softmax")
+
 #dependent_student_conv5_fc2, new method
 dependent_student_conv5_fc2 = save_data_to_list(read_data(path+"conv5_fc2_newMethod"))
-print("dependent_student_conv5_fc2: " + str(caculate_convergence_time(dependent_student_conv5_fc2)))
+print("dependent_student_conv5_fc2 (new method): " + str(caculate_convergence_time(dependent_student_conv5_fc2)))
 #plt.plot(dependent_student_conv5_fc2, label="dependent_student_conv5_fc2(new method)")
 
 #independent_student
@@ -62,12 +72,12 @@ print("independent_student_conv2_fc1_new: " + str(caculate_convergence_time(inde
 #independent_student_conv3_fc1
 independent_student_conv3_fc1_new = save_data_to_list(read_data(path+"independent_student_conv3_fc1_0.001"))
 print("independent_student_conv3_fc1_new: " + str(caculate_convergence_time(independent_student_conv3_fc1_new)))
-plt.plot(independent_student_conv3_fc1_new, label="independent_student_conv3_fc1")
+#plt.plot(independent_student_conv3_fc1_new, label="independent_student_conv3_fc1")
 
 #independent_student_conv4_fc1
 independent_student_conv4_fc1_new = save_data_to_list(read_data(path+"independent_student_conv4_fc1_0.001"))
 print("independent_student_conv4_fc1_new: " + str(caculate_convergence_time(independent_student_conv4_fc1_new)))
-#plt.plot(independent_student_conv4_fc1_new, label="independent_student_conv4_fc1")
+plt.plot(independent_student_conv4_fc1_new, label="independent_student_conv4_fc1")
 
 #independent_student_conv5_fc2
 independent_student_conv5_fc2 = save_data_to_list(read_data(path+"independent_student_conv5_fc2_0.001"))
